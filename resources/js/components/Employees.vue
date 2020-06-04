@@ -123,13 +123,13 @@
               </td>
               <td class="p-5 text-sm flex inline-flex items-center">
                 <span class="mr-2">
-                  <i class="fa fa-pencil text-teal-400 text-2xl"></i>
+                  <i class="fa fa-pen text-teal-400 text-2xl"></i>
                 </span>
                 <span>
-                  <i class="fa fa-ellipsis-v text-gray-300 text-2xl"></i>
+                  <i class="fa fa-ellipsis-v text-gray-300 text-xl"></i>
                 </span>
                 <span class="ml-2">
-                  <i class="fa fa-trash text-red-400 text-2xl"></i>
+                  <i class="fa fa-trash text-red-400 text-xl"></i>
                 </span>
               </td>
             </tr>
@@ -148,3 +148,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+.custom-label input:checked + svg {
+  display: block !important;
+}
+</style>

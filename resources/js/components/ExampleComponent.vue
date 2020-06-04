@@ -13,7 +13,15 @@
         >Add Employee</button>
       </div>
       <div class="w-full mt-2 overflow-x-auto bg-gray-200">
-        <employees :employees="employees"/>
+        <div class="w-full h-full fixed block top-0 left-0 opacity-75 z-50" v-if="loading">
+          <span
+            class="text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0"
+            style="top: 50%;"
+          >
+            <i class="fas fa-circle-notch fa-spin fa-5x"></i>
+          </span>
+        </div>
+        <employees :employees="employees" />
       </div>
     </div>
   </div>
@@ -25,18 +33,19 @@ import axios from "axios";
 export default {
   data() {
     return {
-      employees: []
+      employees: [],
+      loading: true
     };
   },
   async created() {
-    await axios.get("/api/employees").then(response => {
-      this.employees = response.data.data;
-    });
+    await axios
+      .get("/api/employees")
+      .then(response => {
+        this.employees = response.data.data;
+      })
+      .finally(() => {
+        this.loading = false;
+      });
   }
 };
 </script>
-<style scoped>
-.custom-label input:checked + svg {
-  display: block !important;
-}
-</style>
