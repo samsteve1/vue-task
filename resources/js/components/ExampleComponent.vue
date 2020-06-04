@@ -25,7 +25,7 @@ import axios from 'axios'
         },
         methods: {
             async getUser(){
-                let response = await axios.get('/api/user')
+                let response = await axios.get('/api/employees')
                 this.user =response.data
             }
         },

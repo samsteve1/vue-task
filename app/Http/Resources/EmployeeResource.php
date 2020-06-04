@@ -18,7 +18,7 @@ class EmployeeResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'job_title' => $this->job_title,
-            'salary' => $this->salary,
+            'salary' => $this->formattedSalary,
             'type' => $this->work_type,
             'status' => $this->status
             //'created_at' => $this->created_at->diffForHumans()
