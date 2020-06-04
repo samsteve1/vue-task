@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="flex items-center justify-between flex-wrap bg-white p-1 sm:p-3 rounded-lg">
+        <nav class="flex items-center justify-between flex-wrap bg-white p-1 sm:p-3 rounded-t-lg">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
               <img src="{{ asset('images/logo2.png') }}" width="50px" height="50px" alt="logo">
               <span class="font-bold text-3xl tracking-tight text-gray-800">Vue-Task</span>
