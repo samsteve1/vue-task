@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        {{ user }}
                     </div>
                 </div>
             </div>
@@ -15,9 +15,22 @@
 </template>
 
 <script>
+import axios from 'axios'
+
     export default {
+        data() {
+            return {
+                user: null
+            }
+        },
+        methods: {
+            async getUser(){
+                let response = await axios.get('/api/user')
+                this.user =response.data
+            }
+        },
         mounted() {
-            console.log('Component mounted.')
+            this.getUser();
         }
     }
 </script>
