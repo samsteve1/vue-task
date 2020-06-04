@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="flex items-center justify-between flex-wrap bg-white p-1 sm:p-3 rounded-t-lg">
+        <nav class="flex items-center justify-between flex-wrap bg-white p-1 sm:p-3 rounded-t-lg shadow-md">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
               <img src="{{ asset('images/logo2.png') }}" width="50px" height="50px" alt="logo">
               <span class="font-bold text-3xl tracking-tight text-gray-800">Vue-Task</span>
@@ -35,7 +35,7 @@
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="nav_wrapper">
               <div class="text-sm lg:flex-grow">
                 <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0  hover:text-teal-600 mr-12 text-lg text-gray-900 border-b-2 border-teal-600">
-                  Employees
+                  Employee
                 </a>
                 <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-teal-600 mr-12 text-lg">
                   Calendar
@@ -59,7 +59,7 @@
             </div>
           </nav>
 
-        <main class="py-4">
+        <main class="mx-auto px-4 my-4">
             @yield('content')
         </main>
     </div>
