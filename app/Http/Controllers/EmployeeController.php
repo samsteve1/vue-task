@@ -12,4 +12,10 @@ class EmployeeController extends Controller
         $employees = Employee::get();
         return EmployeeResource::collection($employees);
     }
+    public function destroy(Employee $employee)
+    {
+        $employee->delete();
+
+        return response()->json(['message' => 'Employess deleted!'], 200);
+    }
 }

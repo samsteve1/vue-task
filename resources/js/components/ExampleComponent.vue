@@ -21,7 +21,10 @@
             <i class="fas fa-circle-notch fa-spin fa-5x"></i>
           </span>
         </div>
-        <employees :employees="employees" />
+        <employees :employees="employees" 
+          @deleting="loading = true"
+          @stop_loading="loading = false"
+          v-if="ready" />
       </div>
     </div>
   </div>
@@ -34,7 +37,8 @@ export default {
   data() {
     return {
       employees: [],
-      loading: true
+      loading: true,
+      ready: false,
     };
   },
   async created() {
@@ -45,6 +49,7 @@ export default {
       })
       .finally(() => {
         this.loading = false;
+        this.ready = true;
       });
   }
 };

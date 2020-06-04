@@ -1920,6 +1920,16 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2060,11 +2070,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     employees: {
       type: Array,
       required: true
+    }
+  },
+  data: function data() {
+    return {
+      local: this.employees
+    };
+  },
+  methods: {
+    deleteEmployee: function deleteEmployee(id) {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.$emit("deleting");
+
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("/api/employees/".concat(id)).then(function (res) {
+                  _this.local = _this.local.filter(function (e) {
+                    return e.id !== id;
+                  });
+                })["finally"](function () {
+                  _this.$emit("stop_loading");
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -2119,12 +2166,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       employees: [],
-      loading: true
+      loading: true,
+      ready: false
     };
   },
   created: function created() {
@@ -2140,6 +2191,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.employees = response.data.data;
               })["finally"](function () {
                 _this.loading = false;
+                _this.ready = true;
               });
 
             case 2:
@@ -39250,7 +39302,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.employees, function(employee) {
+        _vm._l(_vm.local, function(employee) {
           return _c(
             "tr",
             { key: employee.id, staticClass: "bg-white border-b-8" },
@@ -39342,9 +39394,9 @@ var render = function() {
               _c("td", { staticClass: "px-5 py-5 text-sm" }, [
                 _c("p", { staticClass: "text-gray-900 whitespace-no-wrap" }, [
                   _vm._v(
-                    "\n              " +
+                    "\n            " +
                       _vm._s(employee.salary) +
-                      "\n              "
+                      "\n            "
                   ),
                   _c(
                     "span",
@@ -39375,7 +39427,35 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(3, true)
+              _c(
+                "td",
+                { staticClass: "p-5 text-sm flex inline-flex items-center" },
+                [
+                  _vm._m(3, true),
+                  _vm._v(" "),
+                  _vm._m(4, true),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.deleteEmployee(employee.id)
+                          }
+                        }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-trash text-red-400 text-xl"
+                        })
+                      ]
+                    )
+                  ])
+                ]
+              )
             ]
           )
         }),
@@ -39396,7 +39476,7 @@ var staticRenderFns = [
           "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
       },
       [
-        _vm._v("\n            EMPLOYEE\n            "),
+        _vm._v("\n          EMPLOYEE\n          "),
         _c("i", { staticClass: "fa fa-arrow-up text-gray-400" })
       ]
     )
@@ -39412,7 +39492,7 @@ var staticRenderFns = [
           "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
       },
       [
-        _vm._v("\n            SALARY\n            "),
+        _vm._v("\n          SALARY\n          "),
         _c("i", { staticClass: "fa fa-arrow-up text-gray-400" })
       ]
     )
@@ -39428,7 +39508,7 @@ var staticRenderFns = [
           "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
       },
       [
-        _vm._v("\n            STATUS\n            "),
+        _vm._v("\n          STATUS\n          "),
         _c("i", { staticClass: "fa fa-arrow-down text-gray-700" })
       ]
     )
@@ -39437,23 +39517,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      { staticClass: "p-5 text-sm flex inline-flex items-center" },
-      [
-        _c("span", { staticClass: "mr-2" }, [
-          _c("i", { staticClass: "fa fa-pen text-teal-400 text-2xl" })
-        ]),
-        _vm._v(" "),
-        _c("span", [
-          _c("i", { staticClass: "fa fa-ellipsis-v text-gray-300 text-xl" })
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "ml-2" }, [
-          _c("i", { staticClass: "fa fa-trash text-red-400 text-xl" })
-        ])
-      ]
-    )
+    return _c("span", { staticClass: "mr-2" }, [
+      _c("i", { staticClass: "fa fa-pen text-teal-400 text-2xl" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("i", { staticClass: "fa fa-ellipsis-v text-gray-300 text-xl" })
+    ])
   }
 ]
 render._withStripped = true
@@ -39514,7 +39588,19 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
-            _c("employees", { attrs: { employees: _vm.employees } })
+            _vm.ready
+              ? _c("employees", {
+                  attrs: { employees: _vm.employees },
+                  on: {
+                    deleting: function($event) {
+                      _vm.loading = true
+                    },
+                    stop_loading: function($event) {
+                      _vm.loading = false
+                    }
+                  }
+                })
+              : _vm._e()
           ],
           1
         )
