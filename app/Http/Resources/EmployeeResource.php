@@ -20,8 +20,9 @@ class EmployeeResource extends JsonResource
             'job_title' => $this->job_title,
             'salary' => $this->formattedSalary,
             'type' => $this->work_type,
-            'status' => $this->status
-            //'created_at' => $this->created_at->diffForHumans()
+            'status' => $this->status,
+            'avatar' => $this->avatar,
+            'created_at' => $this->created_at->diffForHumans()
         ];
     }
 }
