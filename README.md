@@ -31,4 +31,5 @@ Todo:
 
 * Infinite scroll/Pagination
 * Bulk deleting employees
+* Hide side bar on mobile view by default
 
