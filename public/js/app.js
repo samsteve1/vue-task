@@ -49132,7 +49132,7 @@ var render = function() {
                   _c("span", [
                     _c("img", {
                       staticClass:
-                        "hidden mr-1 md:mr-2 md:inline-block h-8 w-8 rounded-full object-cover",
+                        "mr-1 md:mr-2 h-8 w-8 rounded-full object-cover",
                       attrs: { src: employee.avatar, alt: employee.name }
                     })
                   ]),

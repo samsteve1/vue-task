@@ -97,7 +97,7 @@
           <td class="py-5 text-sm flex inline-flex items-center">
             <span>
               <img
-                class="hidden mr-1 md:mr-2 md:inline-block h-8 w-8 rounded-full object-cover"
+                class="mr-1 md:mr-2 h-8 w-8 rounded-full object-cover"
                 :src="employee.avatar"
                 :alt="employee.name"
               />
