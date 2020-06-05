@@ -2058,9 +2058,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                             _this.submitting = true;
                             _context.next = 4;
                             return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/employees", _this.form).then(function (response) {
-                              window.location = '/home';
+                              window.location = '/';
                             })["catch"](function () {
-                              alert("something went wront...check the console!");
+                              alert("something went wrong...check the console!");
                             })["finally"](function () {
                               _this.submitting = false;
                             });
@@ -2242,7 +2242,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                             _this.submitting = true;
                             _context.next = 4;
                             return axios__WEBPACK_IMPORTED_MODULE_1___default.a.patch("/api/employees/".concat(_this.employee.id), _this.form).then(function (response) {
-                              window.location = '/home';
+                              window.location = '/';
+                              console.log(response);
                             })["catch"](function () {
                               alert("something went wront...check the console!");
                             })["finally"](function () {
@@ -2562,7 +2563,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     redirect: function redirect(id) {
-      window.location = "/home/edit/".concat(id);
+      window.location = "/edit/".concat(id);
     }
   }
 });
@@ -48421,8 +48422,8 @@ var render = function() {
               {
                 name: "validate",
                 rawName: "v-validate",
-                value: "required|numeric",
-                expression: "'required|numeric'"
+                value: "required",
+                expression: "'required'"
               }
             ],
             staticClass:
@@ -48569,7 +48570,7 @@ var staticRenderFns = [
       "span",
       {
         staticClass:
-          "text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0",
+          "text-pink-600 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0",
         staticStyle: { top: "50%" }
       },
       [_c("i", { staticClass: "fas fa-circle-notch fa-spin fa-5x" })]
@@ -48729,8 +48730,8 @@ var render = function() {
               {
                 name: "validate",
                 rawName: "v-validate",
-                value: "required|numeric",
-                expression: "'required|numeric'"
+                value: "required",
+                expression: "'required'"
               }
             ],
             staticClass:
@@ -48877,7 +48878,7 @@ var staticRenderFns = [
       "span",
       {
         staticClass:
-          "text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0",
+          "text-pink-600 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0",
         staticStyle: { top: "50%" }
       },
       [_c("i", { staticClass: "fas fa-circle-notch fa-spin fa-5x" })]
@@ -48945,7 +48946,7 @@ var staticRenderFns = [
       "span",
       {
         staticClass:
-          "text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0",
+          "text-pink-600 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0",
         staticStyle: { top: "50%" }
       },
       [_c("i", { staticClass: "fas fa-circle-notch fa-spin fa-5x" })]

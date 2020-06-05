@@ -17,7 +17,7 @@ $factory->define(Employee::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'job_title' => $jobTitles[rand(0, 4)],
-        'salary' => rand(50000, 200000),
+        'salary' => rand(10000, 10000000),
         'work_type' => $work_type[rand(0, 3)],
         'status' => $status[rand(0, 1)]
     ];

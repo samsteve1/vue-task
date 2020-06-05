@@ -169,7 +169,7 @@ export default {
         });
     },
     redirect(id) {
-      window.location = `/home/edit/${id}`;
+      window.location = `/edit/${id}`;
     }
   }
 };

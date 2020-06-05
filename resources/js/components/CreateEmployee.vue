@@ -2,7 +2,7 @@
   <div>
     <div class="w-full h-full fixed block top-0 left-0 opacity-75 z-50" v-if="submitting">
       <span
-        class="text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0"
+        class="text-pink-600 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0"
         style="top: 50%;"
       >
         <i class="fas fa-circle-notch fa-spin fa-5x"></i>
@@ -44,7 +44,7 @@
           name="salary"
           type="number"
           v-model="form.salary"
-          v-validate="'required|numeric'"
+          v-validate="'required'"
         />
         <p class="text-sm text-red-500" v-if="errors.has('salary')">{{ errors.first('salary') }}</p>
       </div>
@@ -112,10 +112,10 @@ export default {
           await axios
             .post("/api/employees", this.form)
             .then(response => {
-              window.location = '/home'
+              window.location = '/'
             })
             .catch(() => {
-              alert("something went wront...check the console!");
+              alert("something went wrong...check the console!");
             })
             .finally(() => {
               this.submitting = false;

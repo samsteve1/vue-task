@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Resources\EmployeeResource;
 class EmployeeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     public function index ()
     {
         $employees = Employee::get();

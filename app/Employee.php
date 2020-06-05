@@ -19,7 +19,7 @@ class Employee extends Model
     
     public function getSalaryAmountAttribute()
     {
-        return $this->salary->amount();
+        return ($this->salary->amount()) / 100;
     }
     public function getForMattedSalaryAttribute()
     {
