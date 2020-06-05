@@ -82,7 +82,7 @@
           type="button"
           :class="{'disabled': submitting}"
           @click.prevent="submit"
-        >Add Employee</button>
+        >Update Employee</button>
       </div>
     </form>
   </div>
