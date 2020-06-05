@@ -29,14 +29,5 @@
         </main>
     </div>
 </body>
-<script>
-    
-    // function toggle() {
-    //     var  menu = document.getElementById('nav_wrapper');
-    //     menu.classList.toggle("flex");
-    //     menu.classList.toggle("hidden");
-    // }
-    
-</script>
 </html>
 
