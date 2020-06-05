@@ -15,8 +15,8 @@ Run the database migration
 
 Seed the employees table with some data by running
 
-*php artisan tinker
-*factory(App\Employee::class,5)->create();
+* php artisan tinker
+* factory(App\Employee::class,5)->create();
 
 Finally, start the application by running:
 
