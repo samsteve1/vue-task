@@ -30,5 +30,5 @@ Finally, start the application by running:
 Todo:
 
 * Infinite scroll/Pagination
-* Bulk deleting employess
+* Bulk deleting employees
 
