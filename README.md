@@ -27,3 +27,8 @@ Finally, start the application by running:
 
 `php artisan serve`
 
+Todo:
+
+* Infinite scroll/Pagination
+* Bulk deleting employess
+
