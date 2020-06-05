@@ -51,7 +51,7 @@
           </div>
         </div>
         <button
-          class="w-full  bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded-full"
+          class="w-full lg:w-2/3 md:w-2/3 bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded-full"
         >Add Project</button>
       </div>
     </div>
