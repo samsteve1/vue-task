@@ -49205,7 +49205,7 @@ var render = function() {
                       },
                       [
                         _c("i", {
-                          staticClass: "fa fa-pen text-teal-400 text-2xl"
+                          staticClass: "fa fa-pen text-teal-400 text-lg"
                         })
                       ]
                     )
@@ -49227,7 +49227,7 @@ var render = function() {
                       },
                       [
                         _c("i", {
-                          staticClass: "fa fa-trash text-red-400 text-xl"
+                          staticClass: "fa fa-trash text-red-400 text-lg"
                         })
                       ]
                     )
@@ -49400,7 +49400,7 @@ var render = function() {
           "button",
           {
             staticClass:
-              "w-full lg:w-2/3 bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded-full"
+              "w-full  bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded-full"
           },
           [_vm._v("Add Project")]
         )

@@ -124,7 +124,7 @@
           <td class="p-5 text-sm flex inline-flex items-center">
             <span class="mr-2">
               <a href="#" @click.prevent="redirect(employee.id)">
-                <i class="fa fa-pen text-teal-400 text-2xl"></i>
+                <i class="fa fa-pen text-teal-400 text-lg"></i>
               </a>
             </span>
             <span>
@@ -132,7 +132,7 @@
             </span>
             <span class="ml-2">
               <a href="#" @click.prevent="deleteEmployee(employee.id)">
-                <i class="fa fa-trash text-red-400 text-xl"></i>
+                <i class="fa fa-trash text-red-400 text-lg"></i>
               </a>
             </span>
           </td>
