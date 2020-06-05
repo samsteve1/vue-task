@@ -1,7 +1,7 @@
 ## Vue-Task- Project setup
 
 * Clone the repository git clone  https://github.com/samsteve1/vue-task.git
-* Create a sqlite database file named "database.sqlite" in the database folder.
+
 
 From the command line interface (CLI), run the following commands:
 
@@ -9,14 +9,14 @@ From the command line interface (CLI), run the following commands:
 * npm install 
 * npm run dev
 
-Run the database migration 
+Generate application key like so:
 
-* php artisan migrate
+* php artisan key:generate
 
-Seed the employees table with some data by running
+Create a .env file and copy the contents of .env.example to the new file.
 
-* php artisan tinker
-* factory(App\Employee::class,5)->create();
+* set the DB_connection to sqlite
+* set DB_DATABASE to /database/database.sqlite
 
 Finally, start the application by running:
 
