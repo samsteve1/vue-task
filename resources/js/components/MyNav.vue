@@ -1,7 +1,7 @@
 <template>
     <nav class="flex items-center justify-between flex-wrap bg-white p-1 sm:p-3 rounded-t-lg shadow-md">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
-              <img src="images/logo2.png" width="50px" height="50px" alt="logo">
+              <img src="/images/logo2.png" width="50px" height="50px" alt="logo">
               <span class="font-bold text-3xl tracking-tight text-gray-800">Vue-Task</span>
             </div>
             <div class="block lg:hidden">

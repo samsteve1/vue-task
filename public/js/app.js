@@ -49451,7 +49451,7 @@ var staticRenderFns = [
       [
         _c("img", {
           attrs: {
-            src: "images/logo2.png",
+            src: "/images/logo2.png",
             width: "50px",
             height: "50px",
             alt: "logo"
