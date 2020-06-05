@@ -123,7 +123,9 @@
           </td>
           <td class="p-5 text-sm flex inline-flex items-center">
             <span class="mr-2">
-              <i class="fa fa-pen text-teal-400 text-2xl"></i>
+              <a href="#" @click.prevent="redirect(employee.id)">
+                <i class="fa fa-pen text-teal-400 text-2xl"></i>
+              </a>
             </span>
             <span>
               <i class="fa fa-ellipsis-v text-gray-300 text-xl"></i>
@@ -165,6 +167,9 @@ export default {
         .finally(() => {
           this.$emit("stop_loading");
         });
+    },
+    redirect(id) {
+      window.location = `/home/edit/${id}`;
     }
   }
 };

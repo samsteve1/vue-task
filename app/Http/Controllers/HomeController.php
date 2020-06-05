@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Employee;
+use App\Http\Resources\EmployeeResource;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,5 +30,10 @@ class HomeController extends Controller
     public function create()
     {
         return view('pages.create');
+    }
+    public function edit(Employee $employee)
+    {
+        // $employee = new EmployeeResource($employee);
+        return view('pages.edit', compact('employee'));
     }
 }

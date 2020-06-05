@@ -94,11 +94,11 @@ export default {
   data() {
     return {
       form: {
-        name: "",
-        job_title: "",
-        salary: "",
-        work_type: "",
-        status: ""
+        name: this.employee.name,
+        job_title: this.employee.job_title,
+        salary: this.employee.salaryAmount,
+        work_type: this.employee.work_type,
+        status: this.employee.status
       },
       submitting: false
     };
@@ -110,7 +110,7 @@ export default {
           // validation successful
           this.submitting = true;
           await axios
-            .post("/api/employees", this.form)
+            .patch(`/api/employees/${this.employee.id}`, this.form)
             .then(response => {
               window.location = '/home'
             })
@@ -125,6 +125,12 @@ export default {
         }
       });
     }
+  },
+  props: {
+      employee: {
+          type: Object,
+          required: true
+      }
   }
 };
 </script>

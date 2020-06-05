@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use App\Http\Resources\EmployeeResource;
 class EmployeeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index ()
     {
         $employees = Employee::get();
@@ -16,6 +20,17 @@ class EmployeeController extends Controller
     public function store(EmployeeStoreRequest $request) 
     {
        $employee =  Employee::create([
+            'name' => $request->name,
+            'job_title' => $request->job_title,
+            'salary' => ((int)$request->salary) * 100,
+            'work_type' => ucfirst($request->work_type),
+            'status' => ucfirst($request->status)
+        ]);
+        return new EmployeeResource($employee);
+    }
+    public function update(EmployeeStoreRequest $request, Employee $employee)
+    {
+        $employee->update([
             'name' => $request->name,
             'job_title' => $request->job_title,
             'salary' => ((int)$request->salary) * 100,

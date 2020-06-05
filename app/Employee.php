@@ -11,10 +11,15 @@ class Employee extends Model
 {
     use SoftDeletes;
     protected $fillable = ['name', 'job_title', 'salary', 'work_type', 'status'];
-
+    protected $appends = ['salaryAmount'];
     public function getSalaryAttribute($value)
     {
         return new Money($value);
+    }
+    
+    public function getSalaryAmountAttribute()
+    {
+        return $this->salary->amount();
     }
     public function getForMattedSalaryAttribute()
     {
