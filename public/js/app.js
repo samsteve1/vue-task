@@ -2011,6 +2011,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2048,7 +2057,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                             // validation successful
                             _this.submitting = true;
                             _context.next = 4;
-                            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/employees", _this.form).then(function (response) {})["catch"](function () {
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/employees", _this.form).then(function (response) {
+                              window.location = '/home';
+                            })["catch"](function () {
                               alert("something went wront...check the console!");
                             })["finally"](function () {
                               _this.submitting = false;
@@ -48084,6 +48095,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm.submitting
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "w-full h-full fixed block top-0 left-0 opacity-75 z-50"
+          },
+          [_vm._m(0)]
+        )
+      : _vm._e(),
+    _vm._v(" "),
     _c(
       "form",
       {
@@ -48112,8 +48134,8 @@ var render = function() {
               {
                 name: "validate",
                 rawName: "v-validate",
-                value: "required|alpha",
-                expression: "'required|alpha'"
+                value: "required",
+                expression: "'required'"
               }
             ],
             staticClass:
@@ -48327,6 +48349,7 @@ var render = function() {
             {
               staticClass:
                 "bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+              class: { disabled: _vm.submitting },
               attrs: { type: "button" },
               on: {
                 click: function($event) {
@@ -48342,7 +48365,22 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      {
+        staticClass:
+          "text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0",
+        staticStyle: { top: "50%" }
+      },
+      [_c("i", { staticClass: "fas fa-circle-notch fa-spin fa-5x" })]
+    )
+  }
+]
 render._withStripped = true
 
 
